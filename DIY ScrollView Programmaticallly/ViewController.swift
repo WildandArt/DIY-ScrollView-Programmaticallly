@@ -9,9 +9,25 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var conatinerView: UIView!
+    @IBOutlet weak var jingleView: UIImageView!
+
+    @IBOutlet weak var sliderBoundsX: UISlider!
+
+    @IBOutlet weak var sliderBoundsY: UISlider!
+
+    @IBAction func boundsX(_ sender: Any) {
+        conatinerView.bounds.origin.x = CGFloat(sliderBoundsX.value)
+        print("\(conatinerView.bounds.origin.x)")
+    }
+
+    @IBAction func BoundsY(_ sender: Any) {
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        sliderBoundsX.value = Float(conatinerView.bounds.origin.x)
+
     }
 
 
